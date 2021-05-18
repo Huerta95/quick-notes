@@ -1,0 +1,965 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  font-family: poppins;
+}
+
+.App {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+svg {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+}
+
+svg path {
+  fill: #EF476F;
+  -webkit-animation: animate 7s linear infinite;
+          animation: animate 7s linear infinite;
+  -webkit-transition: ease-in-out .4s;
+  transition: ease-in-out .4s;
+}
+
+svg .blue-path {
+  fill: #5182FF !important;
+}
+
+svg .red-path {
+  fill: #EF476F !important;
+}
+
+svg .green-path {
+  fill: #39DD98 !important;
+}
+
+svg .purple-path {
+  fill: #AB60FB !important;
+}
+
+svg .orange-path {
+  fill: #FBAB60 !important;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    d: path("M0,290 C220,250,440,250,660,300 C880,350,1100,360,1320,350 L1320 500 L0 500");
+  }
+  25% {
+    d: path("M0,305 C220,310,440,200,660,250 C880,300,1100,290,1320,300 L1320 500 L0 500");
+  }
+  50% {
+    d: path("M0,320 C220,350,440,350,660,300 C880,250,1100,240,1320,280 L1320 500 L0 500");
+  }
+  75% {
+    d: path("M0,310 C220,295,440,300,660,300 C880,305,1100,310,1320,320 L1320 500 L0 500");
+  }
+  100% {
+    d: path("M0,290 C220,250,440,250,660,300 C880,350,1100,360,1320,350 L1320 500 L0 500");
+  }
+}
+
+@keyframes animate {
+  0% {
+    d: path("M0,290 C220,250,440,250,660,300 C880,350,1100,360,1320,350 L1320 500 L0 500");
+  }
+  25% {
+    d: path("M0,305 C220,310,440,200,660,250 C880,300,1100,290,1320,300 L1320 500 L0 500");
+  }
+  50% {
+    d: path("M0,320 C220,350,440,350,660,300 C880,250,1100,240,1320,280 L1320 500 L0 500");
+  }
+  75% {
+    d: path("M0,310 C220,295,440,300,660,300 C880,305,1100,310,1320,320 L1320 500 L0 500");
+  }
+  100% {
+    d: path("M0,290 C220,250,440,250,660,300 C880,350,1100,360,1320,350 L1320 500 L0 500");
+  }
+}
+
+.mainContainer {
+  position: relative;
+  -ms-grid-row-align: center;
+      align-self: center;
+  width: 1024px;
+  min-height: 550px;
+  border-radius: 25px;
+  background: #373646;
+  -webkit-box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 4fr 2fr;
+      grid-template-columns: 2fr 4fr 2fr;
+  -webkit-transition: ease-in-out .4s;
+  transition: ease-in-out .4s;
+}
+
+.mainContainer .nav {
+  padding-top: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.mainContainer .nav .list {
+  padding-top: 15px;
+  padding-bottom: 9px;
+}
+
+.mainContainer .nav .list .list-background {
+  background-color: white;
+  padding-left: 10px;
+  border-radius: 15px;
+  width: 220px;
+  height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: ease-in-out .2s;
+  transition: ease-in-out .2s;
+}
+
+.mainContainer .nav .list .list-background:hover {
+  cursor: pointer;
+  width: 230px;
+  -webkit-box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding-left: 10px;
+}
+
+.mainContainer .nav .list .list-background:hover .trash-btn {
+  display: inline-block;
+  color: #373646;
+}
+
+.mainContainer .nav .list .list-background .list-color {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  height: 80%;
+  width: 7px;
+  border-radius: 4px;
+}
+
+.mainContainer .nav .list .list-background .list-text {
+  padding-left: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+.mainContainer .nav .list .list-background h1 {
+  height: 1.2em;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1.2em;
+  color: #000000;
+}
+
+.mainContainer .nav .list .list-background h2 {
+  height: 1em;
+  font-weight: 400;
+  font-size: .8em;
+  line-height: 1em;
+  color: #8E8E8E;
+}
+
+.mainContainer .nav .list .list-background .trash-list {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-right: .8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.mainContainer .nav .list .list-background .trash-btn {
+  display: none;
+  height: 100%;
+  font-size: 1em;
+  border: none;
+  background-color: transparent;
+  color: transparent;
+  cursor: pointer;
+  -webkit-transition: ease-in-out .1s;
+  transition: ease-in-out .1s;
+}
+
+.mainContainer .nav .list .list-background .trash-btn:hover {
+  color: #EF476F;
+}
+
+.mainContainer .nav .list .add-button {
+  padding: 0 !important;
+  background-color: #5182FF !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mainContainer .nav .list .add-button h1 {
+  color: white !important;
+  padding-right: 1em;
+}
+
+.mainContainer .todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 50px;
+}
+
+.mainContainer .todo .todo-color {
+  position: relative;
+  height: 450px;
+  width: 375px;
+  background-color: #EF476F;
+  -webkit-box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  -webkit-transition: ease-in-out .4s;
+  transition: ease-in-out .4s;
+}
+
+.mainContainer .todo .todo-color .current-list-name {
+  padding-top: .3em;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: 700;
+  color: white;
+  width: 100%;
+  outline: none;
+  -webkit-transition: ease-in-out .2s;
+  transition: ease-in-out .2s;
+}
+
+.mainContainer .todo .todo-color .current-list-name:hover {
+  cursor: pointer;
+  font-size: 1.9em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.mainContainer .todo .todo-color ::-webkit-input-placeholder {
+  opacity: 1;
+  color: white;
+}
+
+.mainContainer .todo .todo-color :-ms-input-placeholder {
+  opacity: 1;
+  color: white;
+}
+
+.mainContainer .todo .todo-color ::-ms-input-placeholder {
+  opacity: 1;
+  color: white;
+}
+
+.mainContainer .todo .todo-color ::placeholder {
+  opacity: 1;
+  color: white;
+}
+
+.mainContainer .todo .todo-color form {
+  padding: .3em 1.8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mainContainer .todo .todo-color form input {
+  border: none;
+  width: 16.9em;
+  height: 1.7em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.mainContainer .todo .todo-color form button {
+  border: none;
+  border-radius: 8px;
+  width: 5em;
+  height: 1.8em;
+  font-size: 1em;
+  font-weight: 400;
+  color: white;
+  background-color: #373646;
+  -webkit-transition: ease-in-out .2s;
+  transition: ease-in-out .2s;
+}
+
+.mainContainer .todo .todo-color form button:hover {
+  cursor: pointer;
+  font-weight: 600;
+  width: 5.1em;
+  border-radius: 10px;
+}
+
+.mainContainer .todo .todo-color .todo-container {
+  padding: .3em 1.8em;
+  overflow-y: scroll;
+  height: 280px;
+}
+
+.mainContainer .todo .todo-color .todo-container::-webkit-scrollbar {
+  width: 0px;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+.mainContainer .todo .todo-color .todo-container .todo-list {
+  width: 100%;
+  padding-left: 0%;
+  list-style: none;
+}
+
+.mainContainer .todo .todo-color .todo-container .todo-list .new-todo {
+  position: relative;
+  width: 100%;
+  padding-bottom: .8em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 80fr 10fr 10fr;
+      grid-template-columns: 80fr 10fr 10fr;
+  -webkit-transition: all .6s ease;
+  transition: all .6s ease;
+}
+
+.mainContainer .todo .todo-color .todo-container .todo-list .new-todo:hover:not(.completed) .priorityContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mainContainer .todo .todo-color .todo-container .todo-list .new-todo:hover:not(.completed) .todo-item {
+  padding-bottom: 1.9em;
+}
+
+.mainContainer .todo .todo-color .todo-container .todo-list .new-todo:hover .complete-btn, .mainContainer .todo .todo-color .todo-container .todo-list .new-todo:hover .trash-btn {
+  color: #373646;
+}
+
+.mainContainer .todo .todo-color .todo-container .todo-list .new-todo .todo-item {
+  cursor: pointer;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  word-wrap: break-word;
+  word-break: break-word;
+  background-color: rgba(255, 255, 255, 0.3);
+  list-style: none;
+  font-size: .8em;
+  min-height: 2em;
+  line-height: 2em;
+  padding-left: .7em;
+  padding-right: .7em;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  -webkit-transition: ease-in-out .1s;
+  transition: ease-in-out .1s;
+}
+
+.mainContainer .todo .todo-color .todo-container .todo-list .new-todo .priorityContainer {
+  -webkit-transition: ease-in-out .2s;
+  transition: ease-in-out .2s;
+  left: .7em;
+  bottom: 1.7em;
+  position: absolute;
+  display: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  font-size: .7em;
+  color: white;
+  border: 1px;
+  border: solid 1px white;
+}
+
+.mainContainer .todo .todo-color .todo-container .todo-list .new-todo .priorityContainer li {
+  padding-left: .5em;
+}
+
+.mainContainer .todo .todo-color .todo-container .todo-list .new-todo .priorityContainer li:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.mainContainer .todo .todo-color .todo-container .todo-list .new-todo .priorityContainer .high {
+  padding-right: .5em;
+}
+
+.mainContainer .todo .todo-color .todo-container .todo-list .new-todo .priorityContainer .selected {
+  font-weight: bold;
+  font-size: 1.05em;
+}
+
+.mainContainer .todo .todo-color .todo-container .todo-list .new-todo .complete-btn, .mainContainer .todo .todo-color .todo-container .todo-list .new-todo .trash-btn {
+  height: 100%;
+  font-size: .8em;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: transparent;
+  cursor: pointer;
+  -webkit-transition: ease-in-out .1s;
+  transition: ease-in-out .1s;
+}
+
+.mainContainer .todo .todo-color .todo-container .todo-list .new-todo .complete-btn:hover, .mainContainer .todo .todo-color .todo-container .todo-list .new-todo .trash-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.mainContainer .todo .todo-color .todo-container .todo-list .new-todo .complete-btn {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+}
+
+.mainContainer .todo .todo-color .todo-container .todo-list .new-todo .trash-btn {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3/4;
+}
+
+.mainContainer .todo .todo-color .todo-container .todo-list .completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.mainContainer .todo .todo-color .todo-filters {
+  position: absolute;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  bottom: 0px;
+  padding: 1em 1.8em;
+  border-top: 1px solid white;
+}
+
+.mainContainer .todo .todo-color .todo-filters .all-button, .mainContainer .todo .todo-color .todo-filters .completed-button, .mainContainer .todo .todo-color .todo-filters .progress-button {
+  width: 6.5em;
+  height: 1.9em;
+  font-size: .9em;
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+  cursor: pointer;
+  outline: none;
+  font-weight: 400;
+}
+
+.mainContainer .todo .todo-color .todo-filters .all-button:hover, .mainContainer .todo .todo-color .todo-filters .completed-button:hover, .mainContainer .todo .todo-color .todo-filters .progress-button:hover {
+  font-weight: 600;
+  width: 7em;
+  line-height: .7em;
+  border: 2px solid white;
+}
+
+.mainContainer .todo .todo-color .todo-filters .filter-active {
+  font-weight: 600;
+  width: 7em;
+  line-height: .7em;
+  border: 2px solid white;
+}
+
+.mainContainer .priority {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 50px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.mainContainer .priority .priorityContainer {
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  list-style: none;
+  border-radius: 8px;
+  font-size: .8em;
+  color: white;
+  border: 1px;
+  border: solid 1px white;
+  min-width: 10em;
+}
+
+.mainContainer .priority .priorityContainer li {
+  padding-left: .7em;
+}
+
+.mainContainer .priority .priorityContainer li:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.mainContainer .priority .priorityContainer .selected {
+  font-weight: bold;
+}
+
+.mainContainer .priority .priorityContainer .high {
+  padding-right: .7em;
+}
+
+.mainContainer .priority .todo-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-item-align: center;
+      align-self: center;
+  padding-top: 1em;
+  padding-left: 0;
+  list-style: none;
+  overflow-y: scroll;
+  height: 430px;
+}
+
+.mainContainer .priority .todo-list::-webkit-scrollbar {
+  width: 0px;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+.mainContainer .priority .new-todo {
+  padding-bottom: .8em;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-transition: ease-in-out .2s;
+  transition: ease-in-out .2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mainContainer .priority .list-background {
+  background-color: #373646;
+  width: 200px;
+  padding-left: 10px;
+  border-radius: 10px;
+  min-height: 1.8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: ease-in-out .2s;
+  transition: ease-in-out .2s;
+}
+
+.mainContainer .priority .list-background:hover {
+  cursor: pointer;
+  width: 210px;
+}
+
+.mainContainer .priority .list-background .list-color {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  height: 22px;
+  min-width: 5px;
+  border-radius: 4px;
+}
+
+.mainContainer .priority .list-background h1 {
+  word-wrap: break-word;
+  word-break: break-word;
+  font-size: .7em;
+  line-height: 1.8em;
+  font-weight: normal;
+  color: white;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
+.mainContainer #blue, .mainContainer .blue {
+  background-color: #5182FF !important;
+}
+
+.mainContainer #red, .mainContainer .red {
+  background-color: #EF476F !important;
+}
+
+.mainContainer #green, .mainContainer .green {
+  background-color: #39DD98 !important;
+}
+
+.mainContainer #purple, .mainContainer .purple {
+  background-color: #AB60FB !important;
+}
+
+.mainContainer #orange, .mainContainer .orange {
+  background-color: #FBAB60 !important;
+}
+
+@media screen and (max-width: 1300px) {
+  .mainContainer {
+    width: 920px;
+    min-height: 530px;
+    -ms-grid-columns: 2.1fr 3.9fr 2fr;
+        grid-template-columns: 2.1fr 3.9fr 2fr;
+  }
+  .mainContainer .nav {
+    padding-top: 25px;
+  }
+  .mainContainer .nav .list .list-background {
+    width: 200px;
+  }
+  .mainContainer .nav .list .list-background:hover {
+    width: 210px;
+  }
+  .mainContainer .todo {
+    padding-top: 40px;
+  }
+  .mainContainer .todo .todo-color {
+    width: 360px;
+  }
+  .mainContainer .todo .todo-color form {
+    padding: .3em 1.5em;
+  }
+  .mainContainer .todo .todo-color .todo-container {
+    padding: .3em 1.5em;
+  }
+  .mainContainer .todo .todo-color .todo-filters {
+    padding: 1em 1.5em;
+  }
+  .mainContainer .priority {
+    padding-top: 40px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .mainContainer {
+    width: 800px;
+    min-height: 510px;
+    -ms-grid-columns: 2.2fr 3.8fr 2fr;
+        grid-template-columns: 2.2fr 3.8fr 2fr;
+  }
+  .mainContainer .nav {
+    padding-top: 20px;
+  }
+  .mainContainer .nav .list .list-background {
+    width: 180px;
+  }
+  .mainContainer .nav .list .list-background:hover {
+    width: 190px;
+  }
+  .mainContainer .todo {
+    padding-top: 30px;
+  }
+  .mainContainer .todo .todo-color {
+    width: 350px;
+  }
+  .mainContainer .todo .todo-color form {
+    padding: .3em 1.2em;
+  }
+  .mainContainer .todo .todo-color .todo-container {
+    padding: .3em 1.2em;
+  }
+  .mainContainer .todo .todo-color .todo-filters {
+    padding: 1em 1.2em;
+  }
+  .mainContainer .priority {
+    padding-top: 30px;
+  }
+  .mainContainer .priority .list-background {
+    width: 180px;
+  }
+  .mainContainer .priority .list-background:hover {
+    width: 190px;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .mainContainer {
+    width: 560px;
+    height: 720px;
+        grid-template-areas: "a a a" "b b c" "b b c";
+    -ms-grid-rows: 1fr 2fr 2fr;
+        grid-template-rows: 1fr 2fr 2fr;
+    -ms-grid-columns: 2fr .9fr 1.1fr;
+        grid-template-columns: 2fr .9fr 1.1fr;
+  }
+  .mainContainer .nav {
+    padding-top: 10px;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: a;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+  }
+  .mainContainer .todo {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: b;
+  }
+  .mainContainer .todo .todo-color {
+    width: 370px;
+    height: 500px;
+  }
+  .mainContainer .priority {
+    padding-top: 35px;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 3;
+    grid-area: c;
+    background-color: #373646;
+  }
+  .mainContainer .priority .list-background {
+    width: 145px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .mainContainer .priority .list-background:hover {
+    width: 150px;
+  }
+  .mainContainer .priority .priorityContainer li {
+    padding-left: .4em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mainContainer {
+    width: 520px;
+    height: 680px;
+        grid-template-areas: "a a a" "b b c" "b b c";
+    -ms-grid-rows: 1fr 2fr 2fr;
+        grid-template-rows: 1fr 2fr 2fr;
+    -ms-grid-columns: 2fr .9fr 1.1fr;
+        grid-template-columns: 2fr .9fr 1.1fr;
+  }
+  .mainContainer .nav {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: a;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+  }
+  .mainContainer .nav .list {
+    padding-top: 5px;
+  }
+  .mainContainer .todo {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: b;
+  }
+  .mainContainer .todo .todo-color {
+    width: 370px;
+    height: 430px;
+  }
+  .mainContainer .todo .todo-color .todo-container {
+    height: 258px;
+  }
+  .mainContainer .priority {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 3;
+    grid-area: c;
+    border-top-right-radius: 0px;
+  }
+  .mainContainer .priority .list-background {
+    width: 130px;
+  }
+  .mainContainer .priority .list-background:hover {
+    width: 135px;
+  }
+  .mainContainer .priority .priorityContainer li {
+    padding-left: .4em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mainContainer {
+    width: 420px;
+    height: 610px;
+        grid-template-areas: "a a a" "b b c" "b b c";
+    -ms-grid-rows: 1fr 2fr 2fr;
+        grid-template-rows: 1fr 2fr 2fr;
+    -ms-grid-columns: 2fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr;
+  }
+  .mainContainer .nav {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: a;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+  }
+  .mainContainer .nav .list {
+    padding-top: 2px;
+    padding-bottom: 3px;
+  }
+  .mainContainer .todo {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: b;
+  }
+  .mainContainer .todo .todo-color {
+    width: 270px;
+    height: 400px;
+  }
+  .mainContainer .todo .todo-color form {
+    padding: .3em .4em;
+  }
+  .mainContainer .todo .todo-color form input {
+    width: 14em;
+  }
+  .mainContainer .todo .todo-color form button {
+    width: 4.5em;
+    height: 1.8em;
+    font-size: .9em;
+  }
+  .mainContainer .todo .todo-color .todo-container {
+    height: 235px;
+    padding: .3em .4em;
+  }
+  .mainContainer .todo .todo-color .todo-filters {
+    padding: 1em .4em;
+  }
+  .mainContainer .todo .todo-color .todo-filters .all-button, .mainContainer .todo .todo-color .todo-filters .completed-button, .mainContainer .todo .todo-color .todo-filters .progress-button {
+    width: 6.7em;
+    font-size: .75em;
+    padding: 1px 5px;
+  }
+  .mainContainer .todo .todo-color .todo-filters .all-button:hover, .mainContainer .todo .todo-color .todo-filters .completed-button:hover, .mainContainer .todo .todo-color .todo-filters .progress-button:hover {
+    font-weight: 600;
+    width: 7em;
+    line-height: .7em;
+  }
+  .mainContainer .todo .todo-color .todo-filters .filter-active {
+    font-weight: 600;
+    width: 6.8em;
+    line-height: .7em;
+    border: 2px solid white;
+  }
+  .mainContainer .priority .list-background {
+    width: 90px;
+  }
+  .mainContainer .priority .list-background:hover {
+    width: 95px;
+  }
+  .mainContainer .priority .priorityContainer {
+    min-width: auto;
+  }
+  .mainContainer .priority .priorityContainer li {
+    font-size: .9em;
+    padding-left: .2em;
+  }
+  .mainContainer .priority .priorityContainer .high {
+    padding-right: .2em;
+  }
+}
+/*# sourceMappingURL=index.css.map */

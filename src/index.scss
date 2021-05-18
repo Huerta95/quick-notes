@@ -1,0 +1,831 @@
+$color-1: #EF476F;
+$color-2: #5182FF;
+$color-3: #39DD98;
+$color-4: #AB60FB;
+$color-5: #FBAB60;
+$colorBack: #373646;
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: poppins;
+  }
+  
+.App{
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+svg {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+
+    path{
+        fill: $color-1;
+        animation: animate 7s linear infinite;
+        transition: ease-in-out .4s;
+    }
+
+    .blue-path{
+        fill: $color-2 !important;
+    }
+    .red-path{
+        fill: $color-1 !important;
+    }
+    .green-path{
+        fill: $color-3 !important;
+    }
+    .purple-path{
+        fill: $color-4 !important;
+    }
+    .orange-path{
+        fill: $color-5 !important;
+    }
+  
+    @keyframes animate{
+        0%{
+            d:path("M0,290 C220,250,440,250,660,300 C880,350,1100,360,1320,350 L1320 500 L0 500")
+        }   
+        25%{
+            d:path("M0,305 C220,310,440,200,660,250 C880,300,1100,290,1320,300 L1320 500 L0 500")
+        }
+        50%{
+            d:path("M0,320 C220,350,440,350,660,300 C880,250,1100,240,1320,280 L1320 500 L0 500")
+        }
+        75%{
+            d:path("M0,310 C220,295,440,300,660,300 C880,305,1100,310,1320,320 L1320 500 L0 500")
+        }
+        100%{
+            d:path("M0,290 C220,250,440,250,660,300 C880,350,1100,360,1320,350 L1320 500 L0 500")
+        }
+    }
+}
+
+.mainContainer{
+    position: relative;
+    align-self: center;
+    width: 1024px;
+    min-height: 550px;
+    border-radius: 25px;
+
+    background: $colorBack;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+    display: grid;
+    grid-template-columns: 2fr 4fr 2fr;
+
+    transition: ease-in-out .4s;
+
+    .nav{
+        padding-top: 35px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .list{
+            padding-top: 15px;
+            padding-bottom: 9px;
+
+            .list-background{
+                background-color: white;
+                padding-left: 10px;
+                border-radius: 15px;
+                width: 220px;
+                height: 45px;
+                display: flex;
+                transition: ease-in-out .2s;
+
+                &:hover{
+                    cursor: pointer;
+                    width: 230px;
+                    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+                    padding-left: 10px;
+
+                    .trash-btn{
+                        display: inline-block;
+                        color: $colorBack;
+                    }
+                }
+
+                .list-color{
+                    align-self: center;
+                    height: 80%;
+                    width: 7px;
+                    border-radius: 4px;
+                }
+
+                .list-text{
+                    padding-left: 5px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    height: 100%;
+                }
+
+                h1{
+                    height: 1.2em;
+                    font-weight: 600;
+                    font-size: 1em;
+                    line-height: 1.2em;
+                  
+                    color: #000000;
+                }
+
+                h2{
+                    height: 1em;
+                    font-weight: 400;
+                    font-size: .8em;
+                    line-height: 1em;
+                  
+                    color: #8E8E8E;
+                }
+
+                .trash-list{
+                    flex-grow: 1;
+                    margin-right: .8em;
+                    display: flex;
+                    justify-content: flex-end;
+                }
+                .trash-btn{
+                    display: none;
+                    height: 100%;
+                    font-size: 1em;
+                    border:none;
+                    background-color: transparent;
+                    color: transparent;
+                    cursor: pointer;
+                    transition: ease-in-out .1s;
+    
+                    &:hover{
+                        color: $color-1;
+                    }
+                }
+            }
+
+            .add-button{
+                padding: 0 !important;
+                background-color: $color-2 !important;
+                align-items: center;
+                justify-content: center;
+
+                h1{
+                    color: white !important;
+                    padding-right: 1em;
+                }
+            }
+        }
+    }
+
+    .todo{  
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+        //padding-right: 45px;
+
+        .todo-color{
+            position: relative;
+            height: 450px;
+            width: 375px;
+            background-color: $color-1;
+          
+            box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+            border-radius: 25px;
+            transition: ease-in-out .4s;
+
+            .current-list-name{
+                padding-top: .3em;
+                border: none;
+                background-color: transparent;
+                text-align: center;
+                font-size: 1.8em;
+                font-weight: 700;
+                color:white;
+                width: 100%;
+                outline: none;
+                transition: ease-in-out .2s;
+
+                &:hover{
+                    cursor: pointer;
+                    font-size: 1.9em;
+                    color: rgba($color: white, $alpha: .8)
+                }
+            }
+
+            ::placeholder{
+                opacity: 1;
+                color: white;
+            }
+
+            form{
+                padding: .3em 1.8em;
+                display: flex;
+                justify-content: space-between;
+
+                input{
+                    border: none;
+                    width: 16.9em;
+                    height: 1.7em;
+                    align-self: center;
+                }
+
+                button{
+                    border: none;
+                    border-radius: 8px;
+                    width: 5em;
+                    height: 1.8em;
+
+                    font-size: 1em;
+                    font-weight: 400;
+
+                    color: white;
+                    background-color: $colorBack;
+
+                    transition: ease-in-out .2s;
+
+                    &:hover{
+                        cursor: pointer;
+                        font-weight: 600;
+                        width: 5.1em;
+                        border-radius: 10px;
+                    }
+                }
+            }
+
+            .todo-container{
+                padding: .3em 1.8em;
+                overflow-y: scroll;
+                height: 280px;
+
+                &::-webkit-scrollbar {
+                    width: 0px;  /* Remove scrollbar space */
+                    background: transparent;  /* Optional: just make scrollbar invisible */
+                }
+
+                .todo-list{
+                    width: 100%;
+                    padding-left: 0%;
+                    list-style: none;
+            
+                    .new-todo{
+                        position: relative;
+                        width: 100%;
+                        padding-bottom: .8em;
+                        display: grid;
+                        grid-template-columns: 80fr 10fr 10fr;
+                        transition: all .6s ease;
+
+                        &:hover:not(.completed){
+                            .priorityContainer{
+                                display: flex;
+                            }
+
+                            .todo-item{
+                                padding-bottom: 1.9em;
+                            }
+                        }
+
+                        &:hover{
+                            .complete-btn, .trash-btn{
+                                color: $colorBack;
+                            }
+                        }
+
+                        .todo-item{
+                            cursor: pointer;
+                            grid-column: 1/2;
+                            word-wrap: break-word;
+                            word-break: break-word;
+                            background-color: rgba($color: white, $alpha: .3);
+                            list-style: none;
+                            font-size: .8em;
+                            min-height: 2em;
+                            line-height: 2em;
+                            padding-left: .7em;
+                            padding-right: .7em;
+                            border-top-left-radius: 8px;
+                            border-bottom-left-radius: 8px;
+                            transition: ease-in-out .1s;
+                        }
+
+                        .priorityContainer{
+                            transition: ease-in-out .2s;
+                            left: .7em;
+                            bottom: 1.7em;
+                            position: absolute;
+                            display: none;
+                            background-color: rgba($color: white, $alpha: .3);
+                            border-radius: 8px;
+                            font-size: .7em;
+                            color: white;
+                            border: 1px;
+                            border: solid 1px white;
+
+                            li{
+                                padding-left: .5em;
+
+                                &:hover{
+                                    cursor: pointer;
+                                    font-weight: bold;
+                                }
+                            }
+
+                            .high{
+                                padding-right: .5em;
+                            }
+
+                            .selected{
+                                font-weight: bold;
+                                font-size: 1.05em;
+                            }
+                        }
+
+                        .complete-btn, .trash-btn{
+                            height: 100%;
+                            font-size: .8em;
+                            border:none;
+                            background-color: rgba($color: white, $alpha: .3);
+                            color: transparent;
+                            cursor: pointer;
+                            transition: ease-in-out .1s;
+            
+                            &:hover{
+                                background-color: rgba($color: white, $alpha: .2);
+                                color: white;
+                            }
+                        }
+
+                        .complete-btn{
+                            grid-column: 2/3;
+                        }
+
+                        .trash-btn{
+                            border-top-right-radius: 8px;
+                            border-bottom-right-radius: 8px;
+                            grid-column: 3/4;
+                        }
+                    }
+
+                    .completed{
+                        text-decoration: line-through;
+                        opacity: 0.5;
+                    }
+                }
+            }
+
+            .todo-filters{
+                position: absolute;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-self: flex-start;
+                bottom: 0px;
+                padding: 1em 1.8em;
+                border-top: 1px solid white;
+            
+                .all-button, .completed-button, .progress-button{
+                    width: 6.5em;
+                    height: 1.9em;
+                    font-size: .9em;
+                    color: white;
+                    background-color: transparent;
+                    border: 1px solid white;
+                    cursor: pointer;
+                    outline: none;
+                    font-weight: 400;
+            
+                    &:hover{
+                        font-weight: 600;
+                        width: 7em;
+                        line-height: .7em;
+                        border: 2px solid white;
+                    }
+                }
+            
+                //Toggles una clase para el filtro que se selecciono.
+                .filter-active{
+                    font-weight: 600;
+                    width: 7em;
+                    line-height: .7em;
+                    border: 2px solid white;
+                }    
+            }
+        }
+    }
+
+    .priority{
+        display: flex;
+        flex-direction: column;
+        padding-top: 50px;
+        height: 100%;
+        background-color: rgba($color: black, $alpha: .1);
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+
+
+        .priorityContainer{
+            align-self: center;
+            display: flex;
+            width: min-content;
+            list-style: none;
+            border-radius: 8px;
+            font-size: .8em;
+            color: white;
+            border: 1px;
+            border: solid 1px white;
+            min-width: 10em;
+
+            li{
+                padding-left: .7em;
+
+                &:hover{
+                    cursor: pointer;
+                    font-weight: bold;
+                }
+            }
+
+            .selected{font-weight: bold;}
+
+            .high{
+                padding-right: .7em;
+            }
+        }
+
+        .todo-list{
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            padding-top: 1em;
+            padding-left: 0;
+            list-style: none;
+
+            overflow-y: scroll;
+            height: 430px;
+
+            &::-webkit-scrollbar {
+                width: 0px;  /* Remove scrollbar space */
+                background: transparent;  /* Optional: just make scrollbar invisible */
+            }
+        }
+
+        .new-todo{
+            padding-bottom: .8em;
+            align-self: center;
+            transition: ease-in-out .2s;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .list-background{
+            background-color: $colorBack;
+            width: 200px;
+            padding-left: 10px;
+            border-radius: 10px;
+            min-height: 1.8em;
+            display: flex;
+            transition: ease-in-out .2s;
+
+            &:hover{
+                cursor: pointer;
+                width: 210px;
+            }
+
+            .list-color{
+                align-self: center;
+                height: 22px;
+                min-width: 5px;
+                border-radius: 4px;
+            }
+
+            h1{
+                word-wrap: break-word;
+                word-break: break-word;
+                font-size: .7em;
+                line-height: 1.8em;
+                font-weight: normal;
+                color: white;
+                align-self: center;
+                padding-left: .5em;
+                padding-right: .5em;
+            }
+        }
+    }
+
+    #blue, .blue{
+        background-color: $color-2 !important;
+    }
+    #red, .red{
+        background-color: $color-1 !important;
+    }      
+    #green, .green{
+        background-color: $color-3 !important;
+    }
+    #purple, .purple{
+        background-color: $color-4 !important;
+    }
+    #orange, .orange{
+        background-color: $color-5 !important;
+    }
+
+    @media screen and (max-width: 1300px){
+        width: 920px;
+        min-height: 530px;
+        grid-template-columns: 2.1fr 3.9fr 2fr;
+
+        .nav{
+            padding-top: 25px;
+
+            .list .list-background{
+                width: 200px;
+    
+                &:hover{
+                    width: 210px;
+                }
+            }   
+        }
+
+        .todo{
+            padding-top: 40px;
+
+            .todo-color{
+                width: 360px;
+
+                form{
+                    padding: .3em 1.5em;
+                }
+
+                .todo-container{
+                    padding: .3em 1.5em;
+                }
+
+                .todo-filters{
+                    padding: 1em 1.5em;
+                }
+            }
+        }
+
+        .priority{
+            padding-top: 40px;
+        }
+    }
+
+    @media screen and (max-width: 1024px){
+        width: 800px;
+        min-height: 510px;
+        grid-template-columns: 2.2fr 3.8fr 2fr;
+
+        .nav{
+            padding-top: 20px;
+
+            .list .list-background{
+                width: 180px;
+    
+                &:hover{
+                    width: 190px;
+                }
+            }   
+        }
+
+        .todo{
+            padding-top: 30px;
+
+            .todo-color{
+                width: 350px;
+
+                form{
+                    padding: .3em 1.2em;
+                }
+
+                .todo-container{
+                    padding: .3em 1.2em;
+                }
+
+                .todo-filters{
+                    padding: 1em 1.2em;
+                }
+            }
+        }
+
+        .priority{
+            padding-top: 30px;
+
+            .list-background{
+                width: 180px;
+
+                &:hover{
+                    width: 190px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 740px){
+        width: 560px;
+        height: 720px;
+        grid-template-areas:
+                            "a a a"
+                            "b b c"
+                            "b b c";
+        grid-template-rows: 1fr 2fr 2fr;
+        grid-template-columns: 2fr .9fr 1.1fr;
+
+        .nav{
+            padding-top: 10px;
+            grid-area: a;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            border-top-right-radius: 25px;
+            border-top-left-radius: 25px;
+        }
+
+        .todo{
+            grid-area: b;
+
+            .todo-color{
+                width: 370px;
+                height: 500px;
+            }
+        }
+
+        .priority{
+            padding-top: 35px;
+            grid-area: c;
+            background-color: $colorBack;
+
+            .list-background{
+                width: 145px;
+                background-color: rgba($color: black, $alpha: .1);
+
+                &:hover{
+                    width: 150px;
+                }
+            }
+
+            .priorityContainer li{
+                padding-left: .4em;
+            }
+        }
+    }
+
+    @media screen and (max-width: 600px){
+        width: 520px;
+        height: 680px;
+        grid-template-areas:
+                            "a a a"
+                            "b b c"
+                            "b b c";
+        grid-template-rows: 1fr 2fr 2fr;
+        grid-template-columns: 2fr .9fr 1.1fr;
+
+        .nav{
+            grid-area: a;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            border-top-right-radius: 25px;
+            border-top-left-radius: 25px;
+
+            .list{
+                padding-top: 5px;
+            }
+        }
+
+        .todo{
+            grid-area: b;
+
+            .todo-color{
+                width: 370px;
+                height: 430px;
+
+                .todo-container{
+                    height: 258px;
+                }
+            }
+        }
+
+        .priority{
+            grid-area: c;
+            border-top-right-radius: 0px;
+
+            .list-background{
+                width: 130px;
+
+                &:hover{
+                    width: 135px;
+                }
+            }
+
+            .priorityContainer li{
+                padding-left: .4em;
+            }
+        }
+    }
+
+    @media screen and (max-width: 480px){
+        width: 420px;
+        height: 610px;
+        grid-template-areas:
+                            "a a a"
+                            "b b c"
+                            "b b c";
+        grid-template-rows: 1fr 2fr 2fr;
+        grid-template-columns: 2fr 1fr 1fr;
+
+        .nav{
+            grid-area: a;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            border-top-right-radius: 25px;
+            border-top-left-radius: 25px;
+
+            .list{
+                padding-top: 2px;
+                padding-bottom: 3px;
+            }
+        }
+
+        .todo{
+            grid-area: b;
+
+            .todo-color{
+                width: 270px;
+                height: 400px;
+
+                form{
+                    padding: .3em .4em;
+
+                    input{
+                        width: 14em;
+                    }
+    
+                    button{
+                        width: 4.5em;
+                        height: 1.8em;
+                        font-size: .9em;
+                    }
+                }
+
+                .todo-container{
+                    height: 235px;
+                    padding: .3em .4em;
+                }
+
+                .todo-filters{
+                padding: 1em .4em;
+            
+                .all-button, .completed-button, .progress-button{
+                    width: 6.7em;
+                    font-size: .75em;
+                    padding: 1px 5px;
+            
+                    &:hover{
+                        font-weight: 600;
+                        width: 7em;
+                        line-height: .7em;
+                    }
+                }
+            
+                //Toggles una clase para el filtro que se selecciono.
+                .filter-active{
+                    font-weight: 600;
+                    width: 6.8em;
+                    line-height: .7em;
+                    border: 2px solid white;
+                }    
+            }
+            }
+        }
+
+        .priority{
+            .list-background{
+                width: 90px;
+
+                &:hover{
+                    width: 95px;
+                }
+            }
+
+            .priorityContainer{
+                min-width: auto;
+            }
+            .priorityContainer li{
+                font-size: .9em;
+                padding-left: .2em;
+            }
+
+            .priorityContainer .high{
+                padding-right: .2em;
+            }
+        }
+    }
+}
